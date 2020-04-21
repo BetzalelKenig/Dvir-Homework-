@@ -1,7 +1,7 @@
-import psycopg2
+import psycopg2 as pg2
 import os
 
-con = psycopg2.connect(database="test",
+con = pg2.connect(database="test",
                        host="localhost",
                        user="postgres",
                        port="5432",
