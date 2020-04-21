@@ -10,7 +10,7 @@ con = pg2.connect(database="test",
 
 cur = con.cursor()
 
-cur.execute("select * from person")
+cur.execute("""SELECT * FROM person WHERE CHAR_LENGTH(password) > 10 ORDER BY city""")
 
 rows = cur.fetchall()
 
@@ -20,5 +20,6 @@ for row in rows:
 cur.close()
 
 con.close()
+
 
 
