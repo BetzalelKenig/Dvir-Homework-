@@ -1,0 +1,29 @@
+regex
+https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%98%D7%95%D7%99_%D7%A8%D7%92%D7%95%D7%9C%D7%A8%D7%99 
+
+https://en.wikipedia.org/wiki/Regular_expression
+
+.		 -  Any Character Except New Line
+			
+\d		 - Digit (0-9)
+\D 		 - Not a Digit (0-9)
+\w		 - word Character (a-z, A-Z, 0-9, _)
+\W 		 - Not a Word Character
+\s 		 - Whitespace (space, tab, newline)
+
+\b		 - Word Boundary
+\B 		 - Not a Word Boudary
+^ 		 - Beginning of a String
+$  		 - End of a String
+
+[] 		 - Matches Characters in brackets (It's like one character from the bracets or in the range)
+[^ ]	 - Matches Characters not in 
+| 		 - Either Or
+( ) 	 - Group
+
+Quantifiers:
+* 		 - 0 or More
++  		 - 1 or More
+?  		 - 0 or One
+{4}		 - Exact Number
+{2,5} 	 - Range of Numbers (Minimum, Maximum)
