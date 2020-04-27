@@ -1,6 +1,7 @@
 Rgular Expression \ regex
 ביטוי רגולרי
 ויקיפדיה  https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%98%D7%95%D7%99_%D7%A8%D7%92%D7%95%D7%9C%D7%A8%D7%99 
+ re   הדקומנטציה של    https://docs.python.org/3/library/re.html
 
 
 .		 -  Any Character Except New Line                                               
@@ -69,8 +70,63 @@ Quantifiers:
 
 
 -------------------------------------------------------------
+re Functions
+
 import re
+The first argument in split function can bi a regex pattern
 
-re.search(pattern, string, flags=0)
+h = re.compile(r'regex patern')
 
+re.match()    True / False מחזיר
 
+re.findall()  -  הפונקציה מחזירה ליסט עם כל ההתאמות
+re.sub(pattern, replace, string, count=0)     -   הפונקציה מחליפה אחת או יותר מההתאמות בסטרינג
+
+re.search(pattern, string, flags=0)  -  אם יש התאמה match הפונקציה מחזירה אוביקט
+ match פונקציות של האוביקט   
+ 
+match.group() -  מחזיר את הסטרינג המתאים
+בלי פרמטר מחזיר את כל ההתאמה
+עם מספר גדול מאפס זה מחזיר את הקבוצה "בתוך ()" לפי המספר
+הפונקציה   groups מחזירה את כל הקבוצות
+
+(?P<name>)אפשר לתת שם לקבוצה ע"י 
+
+match.start()  match.end()  מחזירות את ההתחלה . סוף של ההתאמה הראשונה
+match.span() -    מחזיר טאפל עם ההתחלה והסוף של ההתאמה
+----------------------------------------------------------------------
+flags:
+Syntax for Regex Flags	What does this flag do
+[re.M]	Make begin/end consider each line
+[re.I]	It ignores case
+[re.S]	Make [ . ]
+[re.U]	Make { \w,\W,\b,\B} follows Unicode rules
+[re.L]	Make {\w,\W,\b,\B} follow locale
+[re.X]	Allow comment in Regex
+
+========================================================
+Following table is a list of escape or non-printable characters that can be represented with backslash notation.
+
+An escape character gets interpreted; in a single quoted as well as double quoted strings.
+Backslash notation	Hexadecimal character	Description
+\a	0x07	Bell or alert
+\b	0x08	Backspace
+\cx	
+	Control-x
+\C-x	
+	Control-x
+\e	0x1b	Escape
+\f	0x0c	Formfeed
+\M-\C-x	
+	Meta-Control-x
+\n	0x0a	Newline
+\nnn	
+	Octal notation, where n is in the range 0.7
+\r	0x0d	Carriage return
+\s	0x20	Space
+\t	0x09	Tab
+\v	0x0b	Vertical tab
+\x	
+	Character x
+\xnn	
+	Hexadecimal notation, where n is in the range 0.9, a.f, or A.F
